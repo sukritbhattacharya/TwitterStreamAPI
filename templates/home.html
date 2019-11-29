@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Twitter Stream API</h1>
+            <div id="wrap">
+
+                <form action="/" method="POST" autocomplete="on">
+                <input id="search" name="search" type="text" placeholder="Search Twitter"><input id="search_submit" value="SEARCH" name="submit" type="submit">
+                </form>
+              </div>
+              <br>
+              <br>
+              {% for t in tweet %}
+
+              
+
+              <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ t.text }}</h4>
+                      <p class="card-text">{{ t.description }}</p>
+                      <a href="#" class="card-link">Like</a>
+                      <a href="#" class="card-link">Share</a>
+                      <a href="#" class="card-link">{{ t.created_at }}</a>
+                    </div>
+                  </div>
+
+                  <br>
+              {% endfor %}
+{% endblock content %}
